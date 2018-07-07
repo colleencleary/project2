@@ -43,6 +43,10 @@ app.use( methodOverride( '_method' ) );
 // Routes
 // __________________________
 app.get('/', (req,res)=>{
+  res.redirect('/astronomy');
+});
+
+app.get('/astronomy', (req,res)=>{
   res.render('index.ejs');
 });
 
