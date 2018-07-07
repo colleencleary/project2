@@ -25,6 +25,8 @@ button {
   font-size: 2em;
   font-weight: 200;
   background: -webkit-linear-gradient(#E5E5E5, #38495a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   border: 1px solid #E5E5E5;
   border-radius: 10px;
   width: 180px;
