@@ -4,7 +4,7 @@ body {
 
 }
 h1, h2 {
-  color: #E5E5E5;
+  /* color: #E5E5E5; */
   margin: 0 auto;
   background: -webkit-linear-gradient(white, #38495a);
   -webkit-background-clip: text;
