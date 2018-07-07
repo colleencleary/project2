@@ -24,17 +24,17 @@ button {
   font-family: 'Poppins', sans-serif;
   font-size: 2em;
   font-weight: 200;
-  color: #E5E5E5;
-  border: 1px solid #E5E5E5;
+  color: #38495a;
+  border: 1px solid #38495a;
   border-radius: 10px;
   width: 180px;
   height: 60px;
-  box-shadow: 0 0 10px #E5E5E5;
+  box-shadow: 0 0 10px #38495a;
 }
 button:hover {
   font-weight: 400;
   color: #17303F;
-  background: #E5E5E5;
+  background: #38495a;
 }
 .button-container {
   margin-top: 50px;
