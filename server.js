@@ -1,8 +1,10 @@
+// WOMEN OF STEM: Astronomy
 // __________________________
 // Dependencies
 // __________________________
 const express = require('express')
 const mongoose = require('mongoose')
+const methodOverride = require('method-override')
 const app = express()
 
 // __________________________
@@ -15,24 +17,32 @@ const port = process.env.PORT || 3000
 //___________________
 const mongoUri =  process.env.MONGODB_URI || 'mongodb://localhost:27017/project2_app';
 
-//connect to this database - don't forget to start `mongod`
  mongoose.connect(mongoUri, { useNewUrlParser: true });
-
- // set the connection to const variable for easy access
  const db = mongoose.connection;
-
- //  use this fancy looking stuff to get more useful error messages in your console
  db.on( 'error' , console.error.bind( console , 'connection error: ' ));
  db.once ( 'open' , function () {
    console.log( 'DB: Connected' );
  });
+
+ //___________________
+ //Controllers
+ //___________________
+
+
+//___________________
+// Middleware
+//___________________
+app.use( express.static ( 'public' ) );
+app.use( methodOverride( '_method' ) );
+// app.use( bodyParser.urlencoded( { extended : false } ) );
+// app.use( bodyParser.json() );
 
 
 // __________________________
 // Routes
 // __________________________
 app.get('/', (req,res)=>{
-  res.send('server is running');
+  res.render('index.ejs');
 });
 
 // __________________________
