@@ -13,6 +13,7 @@ const usersController = require('./users.js');
 // Middleware
 //___________________
 router.use('/users', usersController);
+router.use(express.urlencoded({extended:false}));
 
 
 // __________________________
@@ -21,5 +22,7 @@ router.use('/users', usersController);
 router.get('/', (req,res)=>{
   res.render('index.ejs');
 });
+
+
 
 module.exports = router

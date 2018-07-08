@@ -5,6 +5,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const methodOverride = require('method-override')
+const bodyParser      = require ( 'body-parser' );
 const app = express()
 
 // __________________________
@@ -35,7 +36,7 @@ const astroController = require('./controllers/astro.js')
 //___________________
 app.use( express.static ( 'public' ) );
 app.use( methodOverride( '_method' ) );
-// app.use( bodyParser.urlencoded( { extended : false } ) );
+app.use( bodyParser.urlencoded( { extended : false } ) );
 // app.use( bodyParser.json() );
 app.use('/astro', astroController)
 

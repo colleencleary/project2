@@ -121,6 +121,7 @@ input[type="submit"] {
 }
 .text-container {
   width: 50%;
+  font-size: 1.1em;
   /* margin-top: 5%; */
   /* text-align: justify; */
 }
@@ -159,7 +160,7 @@ input {
   font-size: 1em;
   /* margin-left: 15%; */
 }
-input:focus {
+input:focus, select:focus, textarea:focus {
   outline: none;
   border-bottom: 1px solid #E3B505;
 }
@@ -176,10 +177,6 @@ textarea {
   resize: none;
   width: 100%;
   height: auto;
-}
-textarea:focus {
-  outline: none;
-  border-bottom: 1px solid #E3B505;
 }
 
 select  {
