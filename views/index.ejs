@@ -7,14 +7,16 @@
 
 <body>
   <% include ../partials/background_moving.ejs %>
+  <main class="index">
     <h1>Women of stem: astronomy</h1>
     <h2>spread the word.</h2>
 
     <div class="button-container">
-      <button type="button" name="login">log in</button>
-      <button type="button" name="join">join us</button>
+      <a href="/astronomy/sessions/new"><button type="button" id="login">log in</button></a>
+      <a href="/astro/users/new"><button type="button" id="join">join us</button></a>
     </div>
-    
+  </main>
+
 </body>
 
 </html>

@@ -28,7 +28,7 @@ const mongoUri =  process.env.MONGODB_URI || 'mongodb://localhost:27017/project2
  //___________________
  //Controllers
  //___________________
-
+const astroController = require('./controllers/astro.js')
 
 //___________________
 // Middleware
@@ -37,18 +37,18 @@ app.use( express.static ( 'public' ) );
 app.use( methodOverride( '_method' ) );
 // app.use( bodyParser.urlencoded( { extended : false } ) );
 // app.use( bodyParser.json() );
-
+app.use('/astro', astroController)
 
 // __________________________
 // Routes
 // __________________________
 app.get('/', (req,res)=>{
-  res.redirect('/astronomy');
+  res.redirect('/astro');
 });
 
-app.get('/astronomy', (req,res)=>{
-  res.render('index.ejs');
-});
+// app.get('/astro', (req,res)=>{
+//   res.render('index.ejs');
+// });
 
 // __________________________
 // Listener

@@ -1,9 +1,14 @@
 /* Parallax star background adapted from Saransh Sinha on codepen */
 
 html {
-  height: 100%;
+  height: 100vh;
   background: radial-gradient(ellipse at bottom, #17303F 0%, #090a0f 100%);
   overflow: hidden;
+  /* max-height: 400; */
+}
+body {
+  /* overflow: auto; */
+  height: 100vh;
 }
 
 #stars {

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <% include ../../partials/head.ejs %>
+</head>
+
+<body>
+  <% include ../../partials/background.ejs %>
+    <main>
+      <div class="field-container">
+        <div class="text-container">
+          <h1>Women of stem: astronomy</h1>
+          <h2>Apply for Membership</h2>
+          <p style="margin-top: 0;">Women of STEM: Astronomy was created with the hope that it will provide a safe space and online <span style="font-style: italic;">community</span> where women<span style="color: #E3B505">*</span> in astronomy can connect and keep each other informed.</p>
+          <p>Content of this site is user driven. By joining Women of STEM: Astronomy, you are agreeing to be responsible, reasonable,
+            and respectful of others when using of this site.</p>
+
+          <p>The application process requires some personal information so that we can verify your identity before granting membership, however it is only visible to the administrators. We do this to ensure a safe space for our members.</p>
+
+          <p style="margin-bottom: 0;"><span style="color: #E3B505">*</span><a href="https://www.hiretechladies.com/">Tech Ladies</a> said it better than I ever could:</p>
+          <span style="font-style: italic;">
+            <p style="margin: 0;">"Trans women are women.</p>
+          <p style="margin: 0;">Nonbinary folks are welcome with open arms.</p>
+          <p style="margin: 0;">Thanks for being cool."</p>
+        </span>
+
+        </div>
+
+        <div class="form-container">
+          <form action="/users" method="POST">
+            <label for="firstname">First Name: </label>
+            <input type="text" name="firstname" autocomplete="off" />
+
+
+            <label for="lastname">Last Name: </label>
+            <input type="text" name="lastname" />
+
+            <label for="email">Email Address: </label>
+            <input type="email" name="email" />
+
+            <label for="city">City: </label>
+            <input type="text" name="city" />
+
+            <label for="state">State: </label>
+            <input type="text" name="state" />
+
+            <label for="status">How far into your career are you?</label>
+            <select name="status">
+            <option value="undergrad">Undergraduate</option>
+            <option value="grad">Graduate</option>
+            <option value="postdoc">Post Doctorate</option>
+            <option value="career">Done with school!</option>
+          </select>
+
+            <label for="institution">Institution: </label>
+            <input type="text" name="institution" />
+
+            <label for="bio">Tell us about yourself! What are you currently working on?</label>
+            <textarea name="bio"></textarea>
+
+            <label for="website">Website, Github, LinkedIn, Twitter, etc: </label>
+            <input type="text" name="website" />
+
+            <label for="how">How did you hear about Women of STEM: Astronomy?</label>
+            <textarea name="how"></textarea>
+
+
+            <label for="password">Choose a Password:</label>
+            <input type="password" name="password" />
+
+            <input type="submit" value="Create User" />
+          </form>
+        </div>
+      </div>
+    </main>
+
+</body>
+
+</html>
