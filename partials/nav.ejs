@@ -1,0 +1,22 @@
+<nav>
+  <h3 style="bottom: 0; margin: 0;">
+    <% if(currentUser) { %>
+        Welcome back, <%=currentUser.username%>!
+    <% } else { %>
+        Welcome!
+    <% } %>
+</h3>
+  <ul>
+    <li><a href="#">messages</a></li>
+
+    <li><a href="#">favorites</a></li>
+
+    <li><a href="#">settings</a></li>
+
+      <li>
+        <form action="/astro/sessions?_method=DELETE" method="POST" style="border: none;">
+          <input type="submit" value="Logout" style="border: none; box-shadow: none;"/>
+        </form>
+      </li>
+  </ul>
+</nav>

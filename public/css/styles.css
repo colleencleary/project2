@@ -8,9 +8,9 @@ body {
 }
 main {
   width: 100%;
-  overflow: auto;
-  height: 100%;
+  height: 90%;
   margin: 0 auto;
+  overflow: auto;
 }
 h1, h2 {
   /* color: #E5E5E5; */
@@ -46,15 +46,13 @@ button, input[type="submit"] {
   width: 180px;
   height: 60px;
   box-shadow: 0 0 10px #BBBDBF;
-  margin: 2%
+  margin: 2%;
+  cursor: pointer;
 }
 button:hover, input[type="submit"]:hover {
   font-weight: 400;
   color: #17303F;
   background: #BBBDBF;
-}
-button:focus, input[type="submit"] {
-  outline: 0;
 }
 
 input[type="submit"] {
@@ -122,6 +120,7 @@ input[type="submit"] {
 .text-container {
   width: 50%;
   font-size: 1.1em;
+  /* position: sticky; */
   /* margin-top: 5%; */
   /* text-align: justify; */
 }
@@ -164,6 +163,10 @@ input:focus, select:focus, textarea:focus {
   outline: none;
   border-bottom: 1px solid #E3B505;
 }
+button:focus, input[type="submit"]:focus {
+  outline: 0;
+  border-bottom: none;
+}
 
 textarea {
   background: transparent;
@@ -187,4 +190,51 @@ select  {
   font-weight: 100;
   line-height: 1.5em;
   font-size: 1em;
+}
+.forum-container {
+  margin: 0 auto;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  /* width: 100%; */
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+li {
+  margin: 0 2%;
+  padding: 0;
+  /* bottom:  */
+  list-style-type: none;
+}
+nav {
+  width: 80%;
+  display: inline-flex;
+  margin: 0 auto;
+  padding: 0;
+  justify-content: space-between;
+  align-items: flex-end;
+  /* border: 1px solid #444546;
+  border-radius: 5px; */
+}
+nav input[type=submit] {
+  height: 35px;
+  width: 82px;
+  padding: 0;
+  margin: 0;
+  /* overflow: visible; */
+}
+nav form {
+  padding-left: 0;
+}
+.forums {
+  display: flex;
+  justify-content: center;
+}
+.forum-container {
+  width: 80%;
+  border: 1px solid #444546;
+  border-radius: 10px;
 }

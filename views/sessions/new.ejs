@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <% include ../../partials/head.ejs %>
+</head>
+
+<body>
+  <% include ../../partials/background.ejs %>
+    <main>
+      <a href="/astro"><h1>Women of stem: astronomy</h1></a>
+
+      <div class="field-container">
+        <div class="form-container">
+          <h2>log into your account</h2>
+          <form action="/astro/sessions" method="POST" style="border: none;">
+            <input type="text" name="username" placeholder="username" style="margin: 5%; margin-left: 0;"/>
+            <input type="password" name="password" placeholder="password" style="margin: 5%; margin-left: 0;"/>
+            <input type="submit" value="Log In" />
+          </form>
+        </div>
+      </div>
+    </main>
+
+</body>
+
+</html>
