@@ -28,7 +28,7 @@ const mongoUri =  process.env.MONGODB_URI || 'mongodb://localhost:27017/astro';
 
 // Connect
 // const mongoURI = 'mongodb://localhost:27017/'+'project2';
-mongoose.connect(mongoURI, { useNewUrlParser: true });
+mongoose.connect(mongoUri, { useNewUrlParser: true });
 
 // Error / success
 const db = mongoose.connection;
