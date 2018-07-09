@@ -24,10 +24,10 @@ const port = process.env.PORT || 3000
 //___________________
 //Database
 //___________________
-// const mongoUri =  process.env.MONGODB_URI || 'mongodb://localhost:27017/astro';
+const mongoUri =  process.env.MONGODB_URI || 'mongodb://localhost:27017/astro';
 
 // Connect
-const mongoURI = 'mongodb://localhost:27017/'+'project2';
+// const mongoURI = 'mongodb://localhost:27017/'+'project2';
 mongoose.connect(mongoURI, { useNewUrlParser: true });
 
 // Error / success
