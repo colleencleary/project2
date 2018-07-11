@@ -7,13 +7,15 @@
     <% } %>
 </h3>
   <ul>
-    <li><a href="#">events</a></li>
+    <li><a href="/astro/events">events</a></li>
+
+    <li><a href="/astro/forums">forums</a></li>
 
     <li><a href="#">messages</a></li>
 
     <li><a href="#">favorites</a></li>
 
-    <li><a href="#">settings</a></li>
+    <li><a href="/astro/users/<%=currentUser._id%>">profile</a></li>
 
       <li>
         <form action="/astro/sessions?_method=DELETE" method="POST" style="border: none;">

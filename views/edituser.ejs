@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <% include ../partials/head.ejs %>
+
+</head>
+
+<body>
+  <% include ../partials/background.ejs %>
+  <% include ../partials/header.ejs %>
+  <% include ../partials/nav.ejs %>
+    <main>
+      <div class="profile-container">
+        <form action="/astro/users/<%=currentUser._id%>?_method=PUT" method="POST">
+
+          <label for="username">Choose a Username: </label>
+          <input type="text" name="username" value="<%=currentUser.username%>" autocomplete="off" />
+
+          <label for="email">Email Address: </label>
+          <input type="email" name="email"  value="<%=currentUser.email%>" />
+
+          <input type="submit" value="Save Changes" />
+        </form>
+      </div>
+    </main>
+
+</body>
+
+</html>

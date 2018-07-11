@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <% include ../partials/head.ejs %>
+
+</head>
+
+<body>
+  <% include ../partials/background.ejs %>
+  <% include ../partials/header.ejs %>
+  <% include ../partials/nav.ejs %>
+    <main>
+      <div class="profile-container">
+        <h2><%=currentUser.username%>'s Profile</h2>
+        <div class="profile-title">
+          <h3>user info</h3>
+          <a href="/astro/users/<%=currentUser._id%>/edituser">edit</a>
+        </div>
+        <table>
+          <tr>
+            <td class="small-column">Username: </td>
+            <td><%=currentUser.username%></td>
+          </tr>
+          <tr>
+            <td class="small-column">Email: </td>
+            <td><%=currentUser.email%></td>
+          </tr>
+          <tr>
+            <td class="small-column">Password: </td>
+            <td><a href="#">change</a></td>
+          </tr>
+        </table>
+
+        <div class="profile-title">
+          <h3>personal info</h3>
+          <a href="/astro/users/<%=currentUser._id%>/editpersonal">edit</a>
+        </div>
+
+        <table>
+          <tr>
+            <td class="small-column">First Name: </td>
+            <td><%=currentUser.firstname%></td>
+          </tr>
+          <tr>
+            <td class="small-column">Last Name: </td>
+            <td><%=currentUser.lastname%></td>
+          </tr>
+          <tr>
+            <td class="small-column">City: </td>
+            <td><%=currentUser.city%></td>
+          </tr>
+          <tr>
+            <td class="small-column">State: </td>
+            <td><%=currentUser.state%></td>
+          </tr>
+          <tr>
+            <td class="small-column">Status: </td>
+            <td><%=currentUser.status%></td>
+          </tr>
+          <tr>
+            <td class="small-column">Institution: </td>
+            <td><%=currentUser.institution%></td>
+          </tr>
+          <tr>
+            <td class="small-column">Website: </td>
+            <td><%=currentUser.website%></td>
+          </tr>
+          <tr>
+            <td class="small-column">About You: </td>
+            <td><%=currentUser.description%></td>
+          </tr>
+        </table>
+
+      </div>
+    </main>
+
+</body>
+
+</html>

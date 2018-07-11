@@ -193,6 +193,7 @@ select  {
 }
 ul {
   margin: 0;
+  margin-right: 20px;
   padding: 0;
   /* width: 100%; */
   display: inline-flex;
@@ -225,6 +226,7 @@ nav input[type=submit] {
 }
 nav form {
   padding-left: 0;
+  padding-top: 20px;
 }
 .forums {
   display: flex;
@@ -246,6 +248,45 @@ tr {
 }
 th, td {
   border-bottom: 1px solid #444546;
-  padding: 1%;
+  padding: 2%;
   border-collapse: collapse;
+}
+th {
+  height: auto;
+  padding: 0;
+}
+.profile-container {
+  width: 30%;
+  margin: 0 auto;
+  padding-bottom: 300px;
+
+}
+.profile-container table {
+  margin: 0 auto;
+}
+.profile-container td {
+  border-bottom: none;
+  margin: 10% auto;
+  /* width: auto; */
+  /* text-align: left; */
+}
+.small-column {
+  width: 150px;
+  text-align: right;
+  padding: 0;
+
+}
+.profile-title {
+  display: inline-flex;
+  width: 100%;
+  justify-content: center;
+  align-items: baseline;
+}
+.profile-title a {
+  font-size: 12px;
+  margin-left: 10px;
+}
+.profile-title h3 {
+  /* margin-left: 50px; */
+
 }
