@@ -38,6 +38,30 @@ router.get('/', (req,res)=>{
     res.render('index.ejs');
   }
 });
+
+// go to forums
+router.get('/forums/welcome', (req,res)=>{
+  console.log(req.session.currentUser);
+  res.render('forums/welcome.ejs', {
+    currentUser: req.session.currentUser
+  });
+});
+
+// go to forums
+router.get('/forums/advice', (req,res)=>{
+  console.log(req.session.currentUser);
+  res.render('forums/advice.ejs', {
+    currentUser: req.session.currentUser
+  });
+});
+
+// go to forums
+router.get('/forums/watercooler', (req,res)=>{
+  console.log(req.session.currentUser);
+  res.render('forums/watercooler.ejs', {
+    currentUser: req.session.currentUser
+  });
+});
 // go to forums
 router.get('/forums', (req,res)=>{
   console.log(req.session.currentUser);
@@ -46,7 +70,13 @@ router.get('/forums', (req,res)=>{
   });
 });
 
-
+// go to events
+router.get('/events', (req,res)=>{
+  console.log(req.session.currentUser);
+  res.render('events.ejs', {
+    currentUser: req.session.currentUser
+  });
+});
 
 // edit user profile
 router.get('/users/:id/edituser', (req,res)=>{
@@ -73,6 +103,7 @@ router.put('/users/:id', (req, res)=>{
         res.redirect('/astro/users/:id');
     });
 });
+
 // view profile
 router.get('/users/:id', (req,res)=>{
   Users.findById(req.params.id, (error, foundUser) => {
@@ -81,6 +112,7 @@ router.get('/users/:id', (req,res)=>{
     });
   })
 });
+
 router.get('/thanks', (req,res)=>{
   res.render('thanks.ejs');
 });

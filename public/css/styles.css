@@ -180,6 +180,7 @@ textarea {
   resize: none;
   width: 100%;
   height: auto;
+  padding-top: 10px;
 }
 
 select  {
@@ -234,26 +235,30 @@ nav form {
 }
 .forum-container {
   width: 80%;
-  border: 1px solid #444546;
+  /* border: 1px solid #444546; */
   border-radius: 10px;
-  margin: 0 auto;
+  margin: 10px auto;
 }
 table {
   width: 100%;
+  border-collapse: collapse;
 }
 tr {
   width: 100%;
   border-bottom: 1px solid #444546;
-  border-collapse: collapse;
+
+  /* box-sizing: border-box; */
 }
 th, td {
   border-bottom: 1px solid #444546;
   padding: 2%;
-  border-collapse: collapse;
+  /* border-collapse: collapse; */
 }
 th {
   height: auto;
   padding: 0;
+  margin-left: 20px;
+  width: auto;
 }
 .profile-container {
   width: 30%;
@@ -289,4 +294,19 @@ th {
 .profile-title h3 {
   /* margin-left: 50px; */
 
+}
+.bottom-tr {
+  border-bottom: none;
+}
+.forum-links {
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+.event-links {
+  width: 100%;
+  display:inline-flex;
+  justify-content: flex-end;
+  margin: 10px 0;
 }

@@ -12,16 +12,36 @@
   <% include ../partials/nav.ejs %>
     <main>
       <div class="profile-container">
-        <form action="/astro/users<%=currentUser.id%>?_method=PUT" method="POST">
+        <form action="/astro/users/<%=currentUser._id%>?_method=PUT" method="POST">
 
-          <label for="username">Choose a Username: </label>
-          <input type="text" name="username" value="<%=currentUser.username%>" autocomplete="off" />
+          <label for="firstname">First Name: </label>
+          <input type="text" name="firstname" autocomplete="off" value="<%=currentUser.firstname%>"/>
 
-          <label for="email">Email Address: </label>
-          <input type="email" name="email"  value="<%=currentUser.email%>" />
+          <label for="lastname">Last Name: </label>
+          <input type="text" name="lastname"  value="<%=currentUser.lastname%>"/>
 
-          <label for="password">Choose a Password:</label>
-          <input type="password" name="password"  value="<%=currentUser.password%>" />
+          <label for="city">City: </label>
+          <input type="text" name="city"  value="<%=currentUser.city%>"/>
+
+          <label for="state">State: </label>
+          <input type="text" name="state"  value="<%=currentUser.state%>"/>
+
+          <label for="status">How far into your career are you?</label>
+          <select name="status" value="<%=currentUser.status%>">
+          <option value="undergrad">Undergraduate</option>
+          <option value="grad">Graduate</option>
+          <option value="postdoc">Post Doctorate</option>
+          <option value="career">Done with school!</option>
+        </select>
+
+          <label for="institution">Institution: </label>
+          <input type="text" name="institution"  value="<%=currentUser.institution%>"/>
+
+          <label for="bio">Tell us about yourself! What are you currently working on?</label>
+          <textarea name="bio" value="<%=currentUser.bio%>"></textarea>
+
+          <label for="website">Website, Github, LinkedIn, Twitter, etc: </label>
+          <input type="text" name="website"  value="<%=currentUser.website%>"/>
 
           <input type="submit" value="Save Changes" />
         </form>
