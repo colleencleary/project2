@@ -24,7 +24,16 @@
           <th>Replies</th>
           <th>Last Post</th>
         </tr>
-        <tr>
+        <% for(let i = 0; i < posts.length; i++){ %>
+      			<tr>
+              <td>
+                <a href="/astro/forums/<%=posts[i]._id%>"><%=posts[i].title%></a>
+              </td>
+              <td><%=posts[i].comments.length%></td>
+              <td><%=posts[i].date%></td>
+            </tr>
+      		<% } %>
+        <!-- <tr>
           <td><a href="#">Welcome</a><br /> <span style="font-size: 12px;">introduce yourself!</span></td>
           <td>1</td>
           <td>today</td>
@@ -38,7 +47,7 @@
           <td><a href="#">Water Cooler</a><br /> <span style="font-size: 12px;">anything else</span></td>
           <td>1</td>
           <td>today</td>
-        </tr>
+        </tr> -->
       </table>
     </div>
   </div>

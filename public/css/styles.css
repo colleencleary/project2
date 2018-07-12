@@ -303,6 +303,11 @@ th {
   display: inline-flex;
   justify-content: space-between;
   margin: 10px 0;
+  border: 1px solid #77797A;
+  padding: 10px 0;
+}
+.forum-links a {
+  padding: 0 10px;
 }
 .event-links {
   width: 100%;
@@ -323,6 +328,7 @@ th {
   flex-direction: column;
   margin: 30px auto;
   margin-bottom: 300px;
+  border: 1px solid #444546;
 }
 .post-container textarea {
   border: 1px solid #444546;
@@ -342,4 +348,12 @@ th {
   margin: 0;
   width: auto;
   margin-right: 10px;
+}
+.borderedpost-container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-bottom: 300px;
+  border: 1px solid #444546;
 }

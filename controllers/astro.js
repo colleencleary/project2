@@ -41,29 +41,6 @@ router.get('/', (req,res)=>{
   }
 });
 
-// go to forums/welcome
-router.get('/forums/welcome', (req,res)=>{
-  console.log(req.session.currentUser);
-  res.render('forums/welcome.ejs', {
-    currentUser: req.session.currentUser
-  });
-});
-
-// go to forums/advice
-router.get('/forums/advice', (req,res)=>{
-  console.log(req.session.currentUser);
-  res.render('forums/advice.ejs', {
-    currentUser: req.session.currentUser
-  });
-});
-
-// go to forums/watercooler
-router.get('/forums/watercooler', (req,res)=>{
-  console.log(req.session.currentUser);
-  res.render('forums/watercooler.ejs', {
-    currentUser: req.session.currentUser
-  });
-});
 // go to forums
 router.get('/forums', (req,res)=>{
   console.log(req.session.currentUser);
