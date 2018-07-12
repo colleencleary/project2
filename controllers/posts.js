@@ -57,13 +57,8 @@ router.get('/:id', (req, res)=>{
 
 // delete post
 router.delete('/:id', (req, res)=>{
-    Posts.findByIdAndRemove(req.params.id, (err, foundPost)=>{
-        User.findOne({'posts._id':req.params.id}, (err, foundUser)=>{
-            foundUser.posts.id(req.params.id).remove();
-            foundUser.save((err, data)=>{
+    Posts.findByIdAndRemove(req.params.id, ()=>{
                 res.redirect('/forums');
-            });
-        });
     });
 });
 
