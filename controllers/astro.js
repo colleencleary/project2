@@ -43,7 +43,7 @@ router.get('/', (req,res)=>{
 
 // go to events
 router.get('/events', (req,res)=>{
-  console.log(req.session.currentUser);
+  // console.log(req.session.currentUser);
   res.render('events.ejs', {
     currentUser: req.session.currentUser
   });
