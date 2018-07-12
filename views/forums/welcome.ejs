@@ -30,7 +30,7 @@
                 <a href="/astro/forums/<%=posts[i]._id%>"><%=posts[i].title%></a>
               </td>
               <td><%=posts[i].comments.length%></td>
-              <td><%=posts[i].date.toLocaleTimeString()%></td>
+              <td><%=moment(posts[i].date).format('MM-DD-YYYY h:mm a')%></td>
             </tr>
       		<% } %>
 
