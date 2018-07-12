@@ -261,7 +261,7 @@ th {
   width: auto;
 }
 .profile-container {
-  width: 30%;
+  width: 40%;
   margin: 0 auto;
   padding-bottom: 300px;
 
@@ -309,4 +309,37 @@ th {
   display:inline-flex;
   justify-content: flex-end;
   margin: 10px 0;
+}
+#delete:hover {
+  color: #F45B69;
+}
+#delete{
+  box-shadow: 0 0 10px #F45B69;
+  border-color: #F45B69;
+}
+.post-container{
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  margin: 30px auto;
+  margin-bottom: 300px;
+}
+.post-container textarea {
+  border: 1px solid #444546;
+  border-radius: 5px;
+  height: 100px;
+  overflow: auto;
+  margin-left: 10px;
+}
+.inline-container {
+  width: 100%;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  margin: 10px;
+}
+.inline-container label {
+  margin: 0;
+  width: auto;
+  margin-right: 10px;
 }

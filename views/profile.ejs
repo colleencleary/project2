@@ -68,10 +68,14 @@
           </tr>
           <tr>
             <td class="small-column">About You: </td>
-            <td><%=currentUser.description%></td>
+            <td style="padding: 20px;"><%=currentUser.description%></td>
           </tr>
         </table>
-
+        <section>
+          <form action="/astro/users/<%=currentUser._id%>?_method=DELETE" method="post" style="border: none; margin: 50px;">
+              <input type="submit" value="Delete Account" id="delete"/>
+          </form>
+        </section>
       </div>
     </main>
 

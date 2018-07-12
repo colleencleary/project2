@@ -3,15 +3,17 @@ const Schema = mongoose.Schema;
 
 const postSchema = Schema({
   board: String,
-  title: { type: String, required: true, unique: true },
-  author: { type: String, required: true },
+  title: { type: String, required: true},
+  // author: { type: String, required: true },
   anonymous: Boolean,
   body: String,
   comments: [{ body: String, date: Date }],
   date: { type: Date, default: Date.now },
-  meta: { 
-		favorites:  Number
+  meta: {
+		favorites: Number
 	}
 });
 
-const Post = mongoose.model('Post', postSchema);
+const Posts = mongoose.model('Posts', postSchema);
+
+module.exports = Posts

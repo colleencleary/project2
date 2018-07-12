@@ -7,6 +7,7 @@ const bodyParser = require ( 'body-parser' );
 const session = require('express-session');
 const methodOverride = require('method-override');
 const Users = require('../models/users.js');
+const Posts = require('../models/posts.js');
 //___________________
 // Middleware
 //___________________
@@ -24,10 +25,11 @@ router.use(methodOverride('_method'));
 //___________________
 const usersController = require('./users.js');
 const sessionsController = require('./sessions.js');
+const postsController = require('./posts.js');
 
 router.use('/users', usersController);
 router.use('/sessions', sessionsController);
-
+router.use('/forums', postsController);
 // __________________________
 // Routes
 // __________________________
@@ -39,7 +41,7 @@ router.get('/', (req,res)=>{
   }
 });
 
-// go to forums
+// go to forums/welcome
 router.get('/forums/welcome', (req,res)=>{
   console.log(req.session.currentUser);
   res.render('forums/welcome.ejs', {
@@ -47,7 +49,7 @@ router.get('/forums/welcome', (req,res)=>{
   });
 });
 
-// go to forums
+// go to forums/advice
 router.get('/forums/advice', (req,res)=>{
   console.log(req.session.currentUser);
   res.render('forums/advice.ejs', {
@@ -55,7 +57,7 @@ router.get('/forums/advice', (req,res)=>{
   });
 });
 
-// go to forums
+// go to forums/watercooler
 router.get('/forums/watercooler', (req,res)=>{
   console.log(req.session.currentUser);
   res.render('forums/watercooler.ejs', {
@@ -76,41 +78,6 @@ router.get('/events', (req,res)=>{
   res.render('events.ejs', {
     currentUser: req.session.currentUser
   });
-});
-
-// edit user profile
-router.get('/users/:id/edituser', (req,res)=>{
-  Users.findById(req.params.id, (error, foundUser) => {
-    res.render('edituser.ejs', {
-      currentUser: req.session.currentUser
-    });
-  })
-});
-
-// edit user profile
-router.get('/users/:id/editpersonal', (req,res)=>{
-  Users.findById(req.params.id, (error, foundUser) => {
-    res.render('editpersonal.ejs', {
-      currentUser: req.session.currentUser
-    });
-  })
-});
-
-
-
-router.put('/users/:id', (req, res)=>{
-    Users.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedModel)=>{
-        res.redirect('/astro/users/:id');
-    });
-});
-
-// view profile
-router.get('/users/:id', (req,res)=>{
-  Users.findById(req.params.id, (error, foundUser) => {
-    res.render('profile.ejs', {
-      currentUser: req.session.currentUser
-    });
-  })
 });
 
 router.get('/thanks', (req,res)=>{

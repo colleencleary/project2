@@ -1,19 +1,21 @@
 const mongoose = require('mongoose');
+const Posts = require('./posts.js');
 const Schema = mongoose.Schema;
 
 const userSchema = Schema({
-  firstname: { type: String, required: true },
-  lastname: { type: String, required: true },
+  firstname: String,
+  lastname: String,
   email: { type: String, required: true },
-  city: { type: String, required: true },
-  state: { type: String, required: true },
-  status: { type: String, required: true },
-  institution: { type: String, required: true },
-  description: { type: String, required: true },
-  website: { type: String, required: true },
-  how: { type: String, required: true },
+  city: String,
+  state: String,
+  status: String,
+  institution: String,
+  description: String,
+  website: String,
+  how: String,
   username: { type: String, required: true },
-  password: { type: String, required: true }
+  password: { type: String, required: true },
+  posts: [Posts.schema]
 
   // firstname: String,
   // lastname: String,
