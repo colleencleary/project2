@@ -1,9 +1,28 @@
 const express = require('express')
 const router = express.Router()
-
+const moment = require('moment');
 
 const Posts = require('../models/posts.js');
 const User = require('../models/users.js');
+
+// go to forums
+router.get('/', (req,res)=>{
+  // console.log(req.session.currentUser);
+	Posts.find({}).sort({ date: -1}).find({board: 'Welcome'}, (err, welcomePosts)=>{
+		Posts.find({}).sort({ date: -1}).find({board: 'Ask/Offer'}, (err, advicePosts)=>{
+			Posts.find({}).sort({ date: -1}).find({board: 'Water Cooler'}, (err, watercoolerPosts)=>{
+				res.render('forums.ejs', {
+					welcomePosts: welcomePosts,
+					advicePosts: advicePosts,
+					watercoolerPosts: watercoolerPosts,
+					moment: moment,
+					currentUser: req.session.currentUser
+				});
+				});
+			});
+		});
+
+});
 
 router.get('/new', (req, res)=>{
 	res.render('forums/new.ejs', {
@@ -13,6 +32,12 @@ router.get('/new', (req, res)=>{
 
 router.post('/', (req, res)=>{
 	console.log(req.body);
+		req.body.author = req.session.currentUser.username
+		if(req.body.anonymous === 'on'){
+        req.body.anonymous = true;
+    } else {
+        req.body.anonymous = false;
+    }
     Posts.create(req.body, (err, createdPost) => {
 			res.redirect('/astro/forums')
 		})
@@ -20,10 +45,11 @@ router.post('/', (req, res)=>{
 
 // go to forums/welcome
 router.get('/welcome', (req,res)=>{
-  Posts.find({board: 'Welcome'}, (err, foundPosts)=>{
-		console.log(foundPosts);
+  Posts.find({}).sort({ date: -1}).find({board: 'Welcome'}, (err, foundPosts)=>{
+		// console.log(foundPosts);
 		res.render('forums/welcome.ejs', {
 			posts: foundPosts,
+			moment: moment,
 			currentUser: req.session.currentUser
 			});
 		});
@@ -31,17 +57,26 @@ router.get('/welcome', (req,res)=>{
 
 // go to forums/advice
 router.get('/advice', (req,res)=>{
-  res.render('forums/advice.ejs', {
-    currentUser: req.session.currentUser
-  });
+	Posts.find({}).sort({ date: -1}).find({board: 'Ask/Offer'}, (err, foundPosts)=>{
+		// console.log(foundPosts);
+		res.render('forums/advice.ejs', {
+			posts: foundPosts,
+			moment: moment,
+			currentUser: req.session.currentUser
+			});
+		});
 });
 
 // go to forums/watercooler
 router.get('/watercooler', (req,res)=>{
-  console.log(req.session.currentUser);
-  res.render('forums/watercooler.ejs', {
-    currentUser: req.session.currentUser
-  });
+	Posts.find({}).sort({ date: -1}).find({board: 'Water Cooler'}, (err, foundPosts)=>{
+		// console.log(foundPosts);
+		res.render('forums/watercooler.ejs', {
+			posts: foundPosts,
+			moment: moment,
+			currentUser: req.session.currentUser
+			});
+		});
 });
 
 //show forum post
@@ -50,6 +85,7 @@ router.get('/:id', (req, res)=>{
 			console.log(foundPost);
             res.render('forums/show.ejs', {
                 post: foundPost,
+								moment: moment,
 								currentUser: req.session.currentUser
         })
     });
@@ -58,7 +94,7 @@ router.get('/:id', (req, res)=>{
 // delete post
 router.delete('/:id', (req, res)=>{
     Posts.findByIdAndRemove(req.params.id, ()=>{
-                res.redirect('/forums');
+                res.redirect('/astro/forums');
     });
 });
 

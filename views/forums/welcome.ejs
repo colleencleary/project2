@@ -22,7 +22,7 @@
         <tr>
           <th>Topic</th>
           <th>Replies</th>
-          <th>Last Post</th>
+          <th>Posted</th>
         </tr>
         <% for(let i = 0; i < posts.length; i++){ %>
       			<tr>
@@ -30,29 +30,10 @@
                 <a href="/astro/forums/<%=posts[i]._id%>"><%=posts[i].title%></a>
               </td>
               <td><%=posts[i].comments.length%></td>
-              <td><%=posts[i].date%></td>
-              <td>
-                <form action="/astro/forums/<%=posts[i]._id%>?_method=DELETE" method="post" style="border: none; margin: 50px;">
-                  <input type="submit" value="Delete Account" id="delete"/>
-              </form>
-            </td>
+              <td><%=moment(posts[i].date).format('MM-DD-YYYY h:mm a')%></td>
             </tr>
       		<% } %>
-        <!-- <tr>
-          <td><a href="#">Welcome</a><br /> <span style="font-size: 12px;">introduce yourself!</span></td>
-          <td>1</td>
-          <td>today</td>
-        </tr>
-        <tr>
-          <td><a href="#">Ask/Offer</a><br /> <span style="font-size: 12px;">advice</span></td>
-          <td>1</td>
-          <td>today</td>
-        </tr>
-        <tr  class="bottom-tr">
-          <td><a href="#">Water Cooler</a><br /> <span style="font-size: 12px;">anything else</span></td>
-          <td>1</td>
-          <td>today</td>
-        </tr> -->
+
       </table>
     </div>
   </div>

@@ -15,10 +15,51 @@
           <span><a href="/astro/forums">Main</a> > <a href="/astro/forums/welcome">Welcome</a> - <a href="/astro/forums/advice">Ask/Offer</a> - <a href="/astro/forums/watercooler">Water Cooler</a></span>
           <a href="/astro/forums/new">SUBMIT NEW POST</a>
         </div>
-        <div class="borderedpost-container">
-          <h2><%=post.title%></h2>
-          <p><%=post.body%></p>
+        <div class="borderedpost-container" style="margin-bottom: 0;">
+          <h2 style="margin: 0; padding: 10px 0;"><%=post.title%></h2>
+          <div class="post-container" style="margin: 0 auto; padding-top: 20px;">
+            <h4 style="margin: 0">Posted by:
+              <% if (post.anonymous == true){%>
+                Anonymous
+              <% } else { %>
+                <%=post.author%>
+              <% }%>
+            </h4>
+            <h4 style="margin: 0">Posted on: <%=moment(post.date).format('MM-DD-YYYY h:mm a')%></h4>
+
+            <p><%=post.body%></p>
+            <div class="forum-links" style="border: none; padding: 0; margin-top: 80px; justify-content: space-between;">
+              <div style="width: 50%;">
+                <a href="#">add a comment</a>
+                <a href="#">favorite</a>
+              </div>
+              <div style="width: 50%;">
+                <% if (post.author == currentUser.username){%>
+                  <a href="#">edit post</a>
+                  <form action="/astro/forums/<%=post._id%>?_method=DELETE" method="post" style="border: none; width: 30px; margin-right: 0">
+                    <input type="submit" value="Delete" style="border: none; box-shadow: none; padding: 20px; margin: auto; "/>
+                  </form>
+                <% } %>
+              </div>
+
+
+            </div>
+          </div>
+          <div class="post-container" style="margin: 0 auto; margin-bottom: 30px;">
+              <h4 style="text-align: left; padding: 0 10px;">Add a comment:</h4>
+              <form action="/astro/forums" method="POST" style="border: none;">
+                <textarea name="comments"></textarea>
+                <input type="submit" name="submit" value="submit">
+              </form>
+          </div>
+          <div class="post-container" style="margin: 0 auto; margin-bottom: 30px;">
+              <h4 style="text-align: left; padding: 0 10px;">Comments:</h4>
+          </div>
         </div>
+        </div>
+        <div class="forum-links" style="margin-bottom: 500px; width: 80%;">
+          <span><a href="/astro/forums">Main</a> > <a href="/astro/forums/welcome">Welcome</a> - <a href="/astro/forums/advice">Ask/Offer</a> - <a href="/astro/forums/watercooler">Water Cooler</a></span>
+          <a href="/astro/forums/new">SUBMIT NEW POST</a>
         </div>
     </main>
 

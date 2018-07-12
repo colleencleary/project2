@@ -41,14 +41,6 @@ router.get('/', (req,res)=>{
   }
 });
 
-// go to forums
-router.get('/forums', (req,res)=>{
-  console.log(req.session.currentUser);
-  res.render('forums.ejs', {
-    currentUser: req.session.currentUser
-  });
-});
-
 // go to events
 router.get('/events', (req,res)=>{
   console.log(req.session.currentUser);

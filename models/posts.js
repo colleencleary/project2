@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const postSchema = Schema({
   board: String,
   title: { type: String, required: true},
-  // author: { type: String, required: true },
+  author: { type: String, required: true },
   anonymous: Boolean,
   body: String,
   comments: [{ body: String, date: Date }],

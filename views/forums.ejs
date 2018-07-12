@@ -25,18 +25,18 @@
         </tr>
         <tr>
           <td><a href="/astro/forums/welcome">Welcome</a><br /> <span style="font-size: 12px;">introduce yourself!</span></td>
-          <td>1</td>
-          <td>today</td>
+          <td><%=welcomePosts.length%></td>
+          <td><%=moment(welcomePosts[0].date).format('MM-DD-YYYY h:mm a')%></td>
         </tr>
         <tr>
           <td><a href="/astro/forums/advice">Ask/Offer</a><br /> <span style="font-size: 12px;">advice</span></td>
-          <td>1</td>
-          <td>today</td>
+          <td><%=advicePosts.length%></td>
+          <td><%=moment(advicePosts[0].date).format('MM-DD-YYYY h:mm a')%></td>
         </tr>
         <tr  class="bottom-tr">
           <td><a href="/astro/forums/watercooler">Water Cooler</a><br /> <span style="font-size: 12px;">anything else</span></td>
-          <td>1</td>
-          <td>today</td>
+          <td><%=watercoolerPosts.length%></td>
+          <td><%=moment(watercoolerPosts[0].date).format('MM-DD-YYYY h:mm a')%></td>
         </tr>
       </table>
     </div>
