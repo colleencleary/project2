@@ -49,6 +49,16 @@ router.get('/events', (req,res)=>{
   });
 });
 
+router.get('/admin', (req,res)=>{
+  Users.find({}, (err, foundUsers)=>{
+		console.log(foundUsers);
+    res.render('admin/admin.ejs', {
+      currentUser: req.session.currentUser,
+      allUsers: foundUsers
+    });
+	});
+});
+
 router.get('/thanks', (req,res)=>{
   res.render('thanks.ejs');
 });

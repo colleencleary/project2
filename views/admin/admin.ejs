@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <% include ../../partials/head.ejs %>
+</head>
+
+<body>
+  <% include ../../partials/background.ejs %>
+  <% include ../../partials/header.ejs %>
+  <% include ../../partials/nav.ejs %>
+  <div class="forums">
+    <div class="forum-container">
+      <h3>Users</h3>
+      <ul style="margin: 0 auto;">
+        <% for(let i = 0; i < allUsers.length; i++){
+          console.log(allUsers[i].username)%>
+                <li><a href="/astro/users/<%=allUsers[i]._id%>"><%=allUsers[i].username%></a></li>
+          <% } %>
+      </ul>
+    </div>
+  </div>
+
+</body>
+
+</html>
