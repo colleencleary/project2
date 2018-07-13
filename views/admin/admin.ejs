@@ -12,7 +12,7 @@
   <div class="forums">
     <div class="forum-container">
       <h3>Users</h3>
-      <ul style="margin: 0 auto;">
+      <ul style="margin: 0 auto; display: block;">
         <% for(let i = 0; i < allUsers.length; i++){
           console.log(allUsers[i].username)%>
                 <li><a href="/astro/users/<%=allUsers[i]._id%>"><%=allUsers[i].username%></a></li>
